@@ -5,8 +5,6 @@ if ($_POST) {
     $message = ($_POST['Number']) ** (1 / $_POST['Root']);
 }
 
-
-
 ?>
 <!doctype html>
 <html lang="en">
@@ -37,13 +35,11 @@ if ($_POST) {
                         <div class="form-group">
                             <button class="btn btn-outline-success ">Calculate</button>
                         </div>
-                        <?php if (isset($massege)) {
-                            echo $massege;
-                        } ?>
                     </form>
+                    <?php if (isset($message)) {
+                        echo "<div class='alert alert-primary'style='color:blue ;font-size:22px'>$message</div>";
+                    } ?>
                 </div>
-                <?php echo "<div style='color:blue ;font-size:22px'> Answer Is=$message</div>" ?>
-
             </div>
         </div>
     </div>

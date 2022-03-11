@@ -1,22 +1,23 @@
 <?php
 $MaxGrade = 50;
-
-$Degree = $_POST['M1'] + $_POST['M2'] + $_POST['M3'] + $_POST['M4'] + $_POST['M5'];
+$Degree = ($_POST['M1']) + ($_POST['M2']) + ($_POST['M3']) + ($_POST['M4']) + ($_POST['M5']);
 $percentage = ($Degree / 250) * 100;
-if ($percentage < 40) {
-    $message = 'Grade F';
-} elseif ($percentage >= 40 && $percentage < 60) {
-    $message = 'Grade E';
-} elseif ($percentage >= 60 && $percentage < 70) {
-    $message = 'Grade D';
-} elseif ($percentage >= 70 && $percentage < 80) {
-    $message = 'Grade C';
-} elseif ($percentage >= 80 && $percentage < 90) {
-    $message = 'Grade B';
-} elseif ($percentage >= 90 && $percentage <= 100) {
-    $message = 'Grade A';
-} else {
-    $message = 'Please Enter Valid Mark';
+if ($_POST) {
+    if ($percentage < 40 && $percentage >= 0) {
+        $message = "<div class='alert alert-secondary'>Grade F</div>";
+    } elseif ($percentage >= 40 && $percentage < 60) {
+        $message = "<div class='alert alert-warning'>Grade E</div>";
+    } elseif ($percentage >= 60 && $percentage < 70) {
+        $message = "<div class='alert alert-info'>Grade D</div>";
+    } elseif ($percentage >= 70 && $percentage < 80) {
+        $message = "<div class='alert alert-primary'>Grade C</div>";
+    } elseif ($percentage >= 80 && $percentage < 90) {
+        $message = "<div class='alert alert-success'>Grade B</div>";
+    } elseif ($percentage >= 90 && $percentage <= 100) {
+        $message = "<div class='alert alert-success'>Grade A</div>";
+    } else {
+        $message = "<div class='alert alert-danger'>Please Enter Valid Mark</div>";
+    }
 }
 ?>
 <!doctype html>
@@ -58,9 +59,10 @@ if ($percentage < 40) {
                             <button class="btn btn-outline-success">Get The Grade</button>
                         </div>
                     </form>
+                    <?php if (isset($message)) {
+                        echo "<div style='color:blue ;font-size:22px'>$message</div>";
+                    } ?>
                 </div>
-                <?php echo "<div style='color:blue ;font-size:22px'>$message</div>"; ?>
-
             </div>
         </div>
     </div>

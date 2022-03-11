@@ -1,18 +1,12 @@
 <?php
 if ($_POST) {
-
     if ($_POST['Number'] >= 0) {
-        $message = 'The Number Is Positive';
+        $message = "<div class=' alert alert-success'>The Number Is Positive </div";
     } else {
-        $message = 'The Number Is Negative';
+        $message = "<div class=' alert alert-danger'>The Number Is Negative </div";
     }
 }
-
-
 ?>
-
-
-
 <!doctype html>
 <html lang="en">
 
@@ -39,9 +33,10 @@ if ($_POST) {
                         <div class="form-group">
                             <button class="btn btn-outline-success ">Check</button>
                         </div>
-                        <br>
-                        <?php echo "<div style='color:blue ;font-size:22px'>$message</div>"; ?>
                     </form>
+                    <?php if (isset($message)) {
+                        echo "<div style='color:blue ;font-size:22px'>$message</div>";
+                    } ?>
                 </div>
             </div>
         </div>

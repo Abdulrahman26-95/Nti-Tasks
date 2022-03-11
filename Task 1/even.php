@@ -1,9 +1,13 @@
 <?php
 $number = 2;
-if ($_POST['Number'] % $number == 0) {
-    $message = 'The Number Is Enven';
-} else {
-    $message = 'The Number Is ODD';
+if ($_POST) {
+    if ($_POST['Number'] % $number == 0) {
+        $message = "<div class='alert alert-success text-center'>
+        The Number Is Enven </div>";
+    } else {
+        $message = "<div class='alert alert-danger'>
+    The Number Is ODD </div>";
+    }
 }
 ?>
 <!doctype html>
@@ -34,8 +38,10 @@ if ($_POST['Number'] % $number == 0) {
                         </div>
 
                     </form>
+                    <?php if (isset($message)) {
+                        echo "<div style='color:blue ;font-size:22px'>$message</div>";
+                    } ?>
                 </div>
-                <?php echo "<div style='color:blue ;font-size:22px'>$message</div>"; ?>
             </div>
         </div>
     </div>

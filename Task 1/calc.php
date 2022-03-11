@@ -1,28 +1,27 @@
 <?php
 $summ = " ";
 if ($_POST) {
-
     switch ($_POST['op']) {
         case 'add':
-            $summ = $_POST['first'] + $_POST['second'];
+            $message = $result = $_POST['first'] + $_POST['second'];
             break;
         case 'diff':
-            $summ = $_POST['first'] - $_POST['second'];
+            $message = $result = $_POST['first'] - $_POST['second'];
             break;
         case 'mul':
-            $summ = $_POST['first'] * $_POST['second'];
+            $message = $result = $_POST['first'] * $_POST['second'];
             break;
         case 'div':
-            $summ = $_POST['first'] / $_POST['second'];
+            $message =  $result = $_POST['first'] / $_POST['second'];
             break;
         case 'mod':
-            $summ = $_POST['first'] % $_POST['second'];
+            $message = $result = $_POST['first'] % $_POST['second'];
             break;
         case 'pow':
-            $summ = $_POST['first'] ** $_POST['second'];
+            $message =  $result = $_POST['first'] ** $_POST['second'];
             break;
         case 'sqr':
-            $summ = $_POST['first'] ** (1 / $_POST['second']);
+            $message =  $result = $_POST['first'] ** (1 / $_POST['second']);
             break;
     }
 }
@@ -85,8 +84,10 @@ if ($_POST) {
                             </div>
                             <br>
                         </form>
+                        <?php if (isset($message)) {
+                            echo "<div class='alert alert-success' style='color:green ;font-size:22px'>$message</div>";
+                        } ?>
                     </div>
-                    <?php echo "<div style='color:blue ;font-size:22px'>result=$summ</div>" ?>
                 </div>
             </div>
         </div>

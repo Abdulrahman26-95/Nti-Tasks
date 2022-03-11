@@ -2,7 +2,6 @@
 $max = 0;
 $min = 0;
 if ($_POST) {
-
     if ($_POST['nu1'] >= $_POST['nu2'] && $_POST['nu1'] >= $_POST['nu3']) {
         $max = $_POST['nu1'];
     } elseif ($_POST['nu2'] >= $_POST['nu3']) {
@@ -10,9 +9,6 @@ if ($_POST) {
     } else {
         $max = $_POST['nu3'];
     }
-
-
-
     if ($_POST['nu1'] <= $_POST['nu2'] && $_POST['nu1'] <= $_POST['nu3']) {
         $min = $_POST['nu1'];
     } elseif ($_POST['nu2'] <= $_POST['nu3']) {
@@ -57,7 +53,7 @@ if ($_POST) {
                         </div>
                     </form>
                     <br>
-                    <?php echo "<div style='color:blue ;font-size:22px'>max=$max <br> min=$min</div>" ?>
+                    <?php echo "<div class='alert alert-success' style='color:green ;font-size:22px'>max=$max <br> min=$min</div>" ?>
                 </div>
             </div>
         </div>

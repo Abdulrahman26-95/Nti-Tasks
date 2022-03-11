@@ -4,19 +4,18 @@ $perunit = " ";
 $usage = " ";
 $total = " ";
 if ($_POST) {
-
     if ($_POST['N1'] <= 50) {
         $price = ($_POST['N1']) * .5;
-        $perunit = .5;
+        $message = $perunit = .5;
     } elseif ($_POST['N1'] > 50 && $_POST['N1'] <= 150) {
         $price = ($_POST['N1']) * .75;
-        $perunit = .75;
+        $message = $perunit = .75;
     } elseif ($_POST['N1'] > 150 && $_POST['N1'] <= 250) {
         $price = ($_POST['N1']) * 1.2;
-        $perunit = 1.2;
+        $message = $perunit = 1.2;
     } elseif ($_POST['N1'] > 250) {
         $price = ($_POST['N1']) * 1.5;
-        $perunit = 1.5;
+        $message =  $perunit = 1.5;
     }
     $usage = $_POST['N1'];
     $total = $price + ($price * .2);
@@ -49,11 +48,11 @@ if ($_POST) {
                             <button class="btn btn-outline-success ">Check</button>
                         </div>
                     </form>
-                </div>
-                <?php echo "<div style='color:blue ;font-size:22px'>Usage : $usage <br>
-                Price/unit : $perunit <br>
-                Price : $price <br>
+                    <?php echo "<div class='alert alert-success' style='color:green ;font-size:22px'>Usage : $usage <br><br>
+                Price/unit : $perunit <br><br>
+                Price : $price <br><br>
                 Total Price : $total</div>" ?>
+                </div>
             </div>
         </div>
     </div>
