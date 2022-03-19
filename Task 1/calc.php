@@ -65,7 +65,7 @@ if ($_POST) {
                                 <input type="number" name="first" id="ID" class="form-control text-center" placeholder="Enter The Number" aris-describedby="helpId">
                             </div>
                             <div class="form-group">
-                                <select name="op" id="operator">
+                                <select class="form-control text-center" name="op" id="operator">
                                     <option value="add">+</option>
                                     <option value="diff">-</option>
                                     <option value="mul">*</option>
